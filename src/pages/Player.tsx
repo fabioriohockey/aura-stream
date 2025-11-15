@@ -14,30 +14,30 @@ const Player = () => {
 
   const dorama = {
     id: "1",
-    title: "Destined Hearts",
+    title: "Corações Destinados",
     poster: drama1,
     totalEpisodes: 16,
     episodes: [
-      { number: 1, title: "Fated Encounter", duration: "65 min" },
-      { number: 2, title: "Crossing Paths", duration: "60 min" },
-      { number: 3, title: "Hidden Feelings", duration: "62 min" },
-      { number: 4, title: "Confession", duration: "58 min" },
-      { number: 5, title: "Distance", duration: "63 min" },
+      { number: 1, title: "Encontro do Destino", duration: "65 min" },
+      { number: 2, title: "Caminhos Cruzados", duration: "60 min" },
+      { number: 3, title: "Sentimentos Ocultos", duration: "62 min" },
+      { number: 4, title: "Confissão", duration: "58 min" },
+      { number: 5, title: "Distância", duration: "63 min" },
     ],
   };
 
   const comments = [
     {
-      user: "DramaLover123",
-      text: "This episode was absolutely amazing! The chemistry between the leads is incredible.",
+      user: "AmanteDeDrama123",
+      text: "Este episódio foi absolutamente incrível! A química entre os protagonistas é maravilhosa.",
       likes: 124,
-      time: "2 hours ago",
+      time: "2 horas atrás",
     },
     {
-      user: "KDramaFan",
-      text: "I can't wait for the next episode! This show keeps getting better and better.",
+      user: "FãDeKDrama",
+      text: "Mal posso esperar pelo próximo episódio! Este dorama fica cada vez melhor.",
       likes: 89,
-      time: "5 hours ago",
+      time: "5 horas atrás",
     },
   ];
 
@@ -53,7 +53,7 @@ const Player = () => {
               {/* Video Player */}
               <Card className="overflow-hidden border-none shadow-lg bg-black">
                 <div className="aspect-video bg-black flex items-center justify-center">
-                  <p className="text-white text-lg">Video Player Placeholder</p>
+                  <p className="text-white text-lg">Player de Vídeo</p>
                 </div>
               </Card>
 
@@ -70,7 +70,7 @@ const Player = () => {
                   </div>
                   <Button variant="outline" className="border-foreground/20">
                     <Share2 className="h-4 w-4 mr-2" />
-                    Share
+                    Compartilhar
                   </Button>
                 </div>
 
@@ -83,7 +83,7 @@ const Player = () => {
                       className="border-foreground/20"
                     >
                       <ChevronLeft className="h-4 w-4 mr-2" />
-                      Previous
+                      Anterior
                     </Button>
                   </Link>
                   <Link to={`/watch/${id}?episode=${Math.min(dorama.totalEpisodes, currentEpisode + 1)}`}>
@@ -92,13 +92,13 @@ const Player = () => {
                       disabled={currentEpisode === dorama.totalEpisodes}
                       className="border-foreground/20"
                     >
-                      Next
+                      Próximo
                       <ChevronRight className="h-4 w-4 ml-2" />
                     </Button>
                   </Link>
                   <Link to={`/dorama/${id}`}>
                     <Button variant="ghost" className="hover:text-primary">
-                      View All Episodes
+                      Ver Todos os Episódios
                     </Button>
                   </Link>
                 </div>
@@ -108,19 +108,19 @@ const Player = () => {
               <div className="space-y-6">
                 <div className="flex items-center space-x-2">
                   <MessageCircle className="h-5 w-5 text-primary" />
-                  <h2 className="text-xl font-bold text-foreground">Comments</h2>
+                  <h2 className="text-xl font-bold text-foreground">Comentários</h2>
                 </div>
 
                 {/* Add Comment */}
                 <Card className="border-border">
                   <CardContent className="p-4 space-y-3">
                     <Textarea
-                      placeholder="Share your thoughts about this episode..."
+                      placeholder="Compartilhe suas impressões sobre este episódio..."
                       className="min-h-[100px] resize-none border-border focus:border-primary"
                     />
                     <div className="flex justify-end">
                       <Button className="bg-primary hover:bg-primary-light text-primary-foreground">
-                        Post Comment
+                        Publicar Comentário
                       </Button>
                     </div>
                   </CardContent>
@@ -151,7 +151,7 @@ const Player = () => {
             <div className="lg:col-span-1">
               <Card className="border-border sticky top-24">
                 <CardContent className="p-6 space-y-4">
-                  <h3 className="text-lg font-bold text-foreground">Episodes</h3>
+                  <h3 className="text-lg font-bold text-foreground">Episódios</h3>
                   <div className="space-y-2 max-h-[600px] overflow-y-auto">
                     {dorama.episodes.map((episode) => (
                       <Link
