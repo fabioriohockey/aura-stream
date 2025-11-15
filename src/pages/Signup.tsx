@@ -15,20 +15,20 @@ const Signup = () => {
               Dorama
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold text-foreground">Create Account</CardTitle>
+          <CardTitle className="text-2xl font-bold text-foreground">Criar Conta</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Start your journey into Asian drama excellence
+            Comece sua jornada no mundo dos doramas asiáticos
           </CardDescription>
         </CardHeader>
         
         <CardContent className="space-y-6">
           <form className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-foreground">Full Name</Label>
+              <Label htmlFor="name" className="text-foreground">Nome Completo</Label>
               <Input
                 id="name"
                 type="text"
-                placeholder="John Doe"
+                placeholder="João Silva"
                 className="border-border focus:border-primary"
               />
             </div>
@@ -38,13 +38,13 @@ const Signup = () => {
               <Input
                 id="email"
                 type="email"
-                placeholder="you@example.com"
+                placeholder="seuemail@exemplo.com"
                 className="border-border focus:border-primary"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-foreground">Password</Label>
+              <Label htmlFor="password" className="text-foreground">Senha</Label>
               <Input
                 id="password"
                 type="password"
@@ -54,7 +54,7 @@ const Signup = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="confirm-password" className="text-foreground">Confirm Password</Label>
+              <Label htmlFor="confirm-password" className="text-foreground">Confirmar Senha</Label>
               <Input
                 id="confirm-password"
                 type="password"
@@ -66,13 +66,13 @@ const Signup = () => {
             <div className="flex items-start space-x-2">
               <input type="checkbox" className="mt-1 rounded border-border" required />
               <label className="text-sm text-muted-foreground">
-                I agree to the{" "}
+                Eu concordo com os{" "}
                 <Link to="/terms" className="text-primary hover:text-primary-light">
-                  Terms of Service
+                  Termos de Serviço
                 </Link>{" "}
-                and{" "}
+                e{" "}
                 <Link to="/privacy" className="text-primary hover:text-primary-light">
-                  Privacy Policy
+                  Política de Privacidade
                 </Link>
               </label>
             </div>
@@ -82,7 +82,7 @@ const Signup = () => {
               className="w-full bg-primary hover:bg-primary-light text-primary-foreground"
               size="lg"
             >
-              Create Account
+              Criar Conta
             </Button>
           </form>
 
@@ -91,7 +91,7 @@ const Signup = () => {
               <Separator className="w-full" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+              <span className="bg-background px-2 text-muted-foreground">Ou continue com</span>
             </div>
           </div>
 
@@ -105,9 +105,9 @@ const Signup = () => {
           </div>
 
           <p className="text-center text-sm text-muted-foreground">
-            Already have an account?{" "}
+            Já tem uma conta?{" "}
             <Link to="/login" className="text-primary hover:text-primary-light font-medium">
-              Sign in
+              Entrar
             </Link>
           </p>
         </CardContent>

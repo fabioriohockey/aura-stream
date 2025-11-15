@@ -13,27 +13,27 @@ const DoramaDetails = () => {
   // Mock data - in real app, fetch based on id
   const dorama = {
     id: "1",
-    title: "Destined Hearts",
+    title: "Corações Destinados",
     poster: drama1,
     backdrop: heroDrama,
     rating: 9.2,
     year: 2024,
     episodes: 16,
-    status: "Ongoing",
-    genres: ["Romance", "Drama", "Fantasy"],
+    status: "Em Exibição",
+    genres: ["Romance", "Drama", "Fantasia"],
     synopsis:
-      "A heartwarming tale of fate, love, and second chances set against the vibrant backdrop of Seoul. When two souls from different worlds collide, their journey becomes an unforgettable story of romance and destiny. As they navigate through life's challenges, they discover that some connections are written in the stars.",
+      "Uma emocionante história de destino, amor e segundas chances ambientada no vibrante cenário de Seul. Quando duas almas de mundos diferentes se encontram, sua jornada se torna uma história inesquecível de romance e destino. Enquanto navegam pelos desafios da vida, descobrem que algumas conexões estão escritas nas estrelas.",
     cast: [
       { name: "Park Ji-won", role: "Lee Soo-jin", image: drama1 },
       { name: "Kim Min-ho", role: "Kang Ji-hoo", image: drama1 },
       { name: "Lee Yeon-hee", role: "Choi Mi-ra", image: drama1 },
     ],
     episodes_list: [
-      { number: 1, title: "Fated Encounter", duration: "65 min" },
-      { number: 2, title: "Crossing Paths", duration: "60 min" },
-      { number: 3, title: "Hidden Feelings", duration: "62 min" },
-      { number: 4, title: "Confession", duration: "58 min" },
-      { number: 5, title: "Distance", duration: "63 min" },
+      { number: 1, title: "Encontro do Destino", duration: "65 min" },
+      { number: 2, title: "Caminhos Cruzados", duration: "60 min" },
+      { number: 3, title: "Sentimentos Ocultos", duration: "62 min" },
+      { number: 4, title: "Confissão", duration: "58 min" },
+      { number: 5, title: "Distância", duration: "63 min" },
     ],
   };
 
@@ -104,29 +104,29 @@ const DoramaDetails = () => {
                   <Link to={`/watch/${dorama.id}`}>
                     <Button size="lg" className="bg-primary hover:bg-primary-light text-primary-foreground px-8">
                       <Play className="h-5 w-5 mr-2 fill-current" />
-                      Watch Now
+                      Assistir Agora
                     </Button>
                   </Link>
                   <Button size="lg" variant="outline" className="border-foreground/20">
                     <Plus className="h-5 w-5 mr-2" />
-                    Add to List
+                    Adicionar à Lista
                   </Button>
                   <Button size="lg" variant="outline" className="border-foreground/20">
                     <Share2 className="h-5 w-5 mr-2" />
-                    Share
+                    Compartilhar
                   </Button>
                 </div>
               </div>
 
               {/* Synopsis */}
               <div className="space-y-3">
-                <h2 className="text-2xl font-bold text-foreground">Synopsis</h2>
+                <h2 className="text-2xl font-bold text-foreground">Sinopse</h2>
                 <p className="text-foreground/80 leading-relaxed">{dorama.synopsis}</p>
               </div>
 
               {/* Cast */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-foreground">Cast</h2>
+                <h2 className="text-2xl font-bold text-foreground">Elenco</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                   {dorama.cast.map((actor, index) => (
                     <Card key={index} className="overflow-hidden border-none shadow-md">
@@ -148,7 +148,7 @@ const DoramaDetails = () => {
 
               {/* Episodes */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-foreground">Episodes</h2>
+                <h2 className="text-2xl font-bold text-foreground">Episódios</h2>
                 <div className="space-y-2">
                   {dorama.episodes_list.map((episode) => (
                     <Link key={episode.number} to={`/watch/${dorama.id}?episode=${episode.number}`}>

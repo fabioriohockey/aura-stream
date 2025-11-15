@@ -15,9 +15,9 @@ const Login = () => {
               Dorama
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold text-foreground">Welcome Back</CardTitle>
+          <CardTitle className="text-2xl font-bold text-foreground">Bem-vindo de Volta</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Sign in to continue watching your favorite doramas
+            Entre para continuar assistindo seus doramas favoritos
           </CardDescription>
         </CardHeader>
         
@@ -28,13 +28,13 @@ const Login = () => {
               <Input
                 id="email"
                 type="email"
-                placeholder="you@example.com"
+                placeholder="seuemail@exemplo.com"
                 className="border-border focus:border-primary"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-foreground">Password</Label>
+              <Label htmlFor="password" className="text-foreground">Senha</Label>
               <Input
                 id="password"
                 type="password"
@@ -46,10 +46,10 @@ const Login = () => {
             <div className="flex items-center justify-between text-sm">
               <label className="flex items-center space-x-2 cursor-pointer">
                 <input type="checkbox" className="rounded border-border" />
-                <span className="text-muted-foreground">Remember me</span>
+                <span className="text-muted-foreground">Lembrar-me</span>
               </label>
               <Link to="/forgot-password" className="text-primary hover:text-primary-light">
-                Forgot password?
+                Esqueceu a senha?
               </Link>
             </div>
 
@@ -58,7 +58,7 @@ const Login = () => {
               className="w-full bg-primary hover:bg-primary-light text-primary-foreground"
               size="lg"
             >
-              Sign In
+              Entrar
             </Button>
           </form>
 
@@ -67,7 +67,7 @@ const Login = () => {
               <Separator className="w-full" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+              <span className="bg-background px-2 text-muted-foreground">Ou continue com</span>
             </div>
           </div>
 
@@ -81,9 +81,9 @@ const Login = () => {
           </div>
 
           <p className="text-center text-sm text-muted-foreground">
-            Don't have an account?{" "}
+            Não tem uma conta?{" "}
             <Link to="/signup" className="text-primary hover:text-primary-light font-medium">
-              Sign up
+              Cadastre-se
             </Link>
           </p>
         </CardContent>

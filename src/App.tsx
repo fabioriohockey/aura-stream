@@ -8,6 +8,9 @@ import DoramaDetails from "./pages/DoramaDetails";
 import Player from "./pages/Player";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Browse from "./pages/Browse";
+import MyList from "./pages/MyList";
+import Trending from "./pages/Trending";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
           <Route path="/" element={<Home />} />
           <Route path="/dorama/:id" element={<DoramaDetails />} />
           <Route path="/watch/:id" element={<Player />} />
+          <Route path="/browse" element={<Browse />} />
+          <Route path="/my-list" element={<MyList />} />
+          <Route path="/trending" element={<Trending />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />

@@ -18,16 +18,16 @@ const Navbar = () => {
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-foreground hover:text-primary transition-colors">
-              Home
+              Início
             </Link>
             <Link to="/browse" className="text-foreground hover:text-primary transition-colors">
-              Browse
+              Explorar
             </Link>
             <Link to="/trending" className="text-foreground hover:text-primary transition-colors">
-              Trending
+              Em Alta
             </Link>
             <Link to="/my-list" className="text-foreground hover:text-primary transition-colors">
-              My List
+              Minha Lista
             </Link>
           </div>
 
@@ -37,7 +37,7 @@ const Navbar = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
                 type="search"
-                placeholder="Search doramas..."
+                placeholder="Buscar doramas..."
                 className="pl-10 w-64 bg-secondary border-border focus:border-primary"
               />
             </div>

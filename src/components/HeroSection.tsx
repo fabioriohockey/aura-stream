@@ -56,17 +56,17 @@ const HeroSection = ({ id, title, description, backdrop, rating, year, genres }:
             <Link to={`/watch/${id}`}>
               <Button size="lg" className="bg-primary hover:bg-primary-light text-primary-foreground px-8 shadow-lg">
                 <Play className="h-5 w-5 mr-2 fill-current" />
-                Watch Now
+                Assistir Agora
               </Button>
             </Link>
             <Button size="lg" variant="outline" className="border-foreground/20 hover:border-primary hover:text-primary">
               <Plus className="h-5 w-5 mr-2" />
-              My List
+              Minha Lista
             </Button>
             <Link to={`/dorama/${id}`}>
               <Button size="lg" variant="ghost" className="hover:bg-accent hover:text-primary">
                 <Info className="h-5 w-5 mr-2" />
-                More Info
+                Mais Informações
               </Button>
             </Link>
           </div>
