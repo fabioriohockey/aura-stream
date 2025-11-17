@@ -8,6 +8,8 @@ use App\Http\Controllers\Api\EpisodeController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\StreamController;
 use App\Http\Controllers\Api\UploadController;
+use App\Http\Controllers\Api\TrackingController;
+use App\Http\Controllers\Api\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,9 +72,29 @@ Route::middleware([])->group(function () {
     Route::get('/episodes/dorama/{doramaId}', [EpisodeController::class, 'byDorama']);
     Route::get('/episodes/recent', [EpisodeController::class, 'recent']);
 
-    
+    // Tracking routes (PRECISA AUTENTICAÇÃO)
+    Route::middleware(['auth:sanctum'])->group(function () {
+        Route::post('/tracking/view', [TrackingController::class, 'trackView']);
+        Route::post('/tracking/progress', [TrackingController::class, 'updateProgress']);
+        Route::get('/tracking/progress', [TrackingController::class, 'getProgress']);
+        Route::post('/tracking/favorites/toggle', [TrackingController::class, 'toggleFavorite']);
+        Route::get('/tracking/favorites', [TrackingController::class, 'getFavorites']);
+        Route::post('/tracking/highlights/toggle', [TrackingController::class, 'toggleHighlight']);
+        Route::get('/tracking/highlights', [TrackingController::class, 'getHighlights']);
+        Route::get('/tracking/stats', [TrackingController::class, 'getStats']);
+    });
+
+    // Comment routes (PRECISA AUTENTICAÇÃO)
+    Route::middleware(['auth:sanctum'])->group(function () {
+        Route::get('/comments', [CommentController::class, 'index']);
+        Route::post('/comments', [CommentController::class, 'store']);
+        Route::put('/comments/{id}', [CommentController::class, 'update']);
+        Route::delete('/comments/{id}', [CommentController::class, 'destroy']);
+        Route::post('/comments/{id}/like', [CommentController::class, 'like']);
+    });
+
     // Test streaming route (SEM AUTENTICAÇÃO)
-    Route::get('/test-stream/{episodeId}', [\App\Http\Controllers\Api\TestStreamController::class, 'stream']);
+    Route::get('/test-stream/{episodeId}', [StreamController::class, 'stream']);
 
     // Image serving route (SEM AUTENTICAÇÃO)
     Route::get('/serve-image/{path}', function ($path) {
